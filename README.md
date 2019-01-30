@@ -13,6 +13,7 @@ Assuming that you use a *POSIX* compliant shell:
 You start by downloading or **cloning** this repository and move the files into your home directory.
 
 `mv .vimrc ~/.vimrc`
+then
 `mv .vim ~/.vim`
 
 Then, fire up vim and run `:PluginInstall`, to let **Vundle** to the rest for you. After this completed, you just have to do one thing more: Head into `~/.vim/bundles/YouCompleteMe` and run `python3 install.py`. If you want *YouCompleteMe* to support Java, Go, C#, etc, check out the *YouCompleteInstallation Guide*.
