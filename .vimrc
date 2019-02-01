@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'   " required
+Plugin 'dikiaap/minimalist'
 Plugin 'tpope/vim-surround'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
@@ -20,8 +21,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tomasr/molokai'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'dan-t/vim-cpp-include'
 Plugin 'itchyny/lightline.vim'
+Plugin 'rainglow/vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'jnurmine/zenburn'
 Plugin 'yuttie/comfortable-motion.vim'
@@ -29,8 +30,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'w0rp/ale'
 Plugin 'fatih/vim-go'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rakr/vim-one'
 Plugin 'pangloss/vim-javascript'
+Plugin 'bfrg/vim-cpp-modern'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'elzr/vim-json'
@@ -40,7 +42,9 @@ Plugin 'nlknguyen/papercolor'
 Plugin 'daylerees/colour-schemes'
 Plugin 'effkay/argonaut.vim'
 Plugin 'ajh17/Spacegray.vim'
-Plugin 'dracula/vim'
+Plugin 'jdsimcoe/abstract.vim'
+Plugin 'hazelnusse/flatbuffers-bazel'
+Plugin 'dcharbon/vim-flatbuffers'
 Plugin 'joshdick/onedark.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-sensible'
@@ -106,11 +110,11 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-  colorscheme molokai
+  colorscheme one
 catch
 endtry
 
-set background=dark
+set background=light
 
 if has("gui_running")
   set guioptions-=T
