@@ -12,9 +12,9 @@ The installment is not hard at all.
 Assuming that you use a *POSIX* compliant shell:
 You start by downloading or **cloning** this repository and move the files into your home directory.
 
-`mv .vimrc ~/.vimrc`
+`cp .vimrc ~/.vimrc`
 then
-`mv .vim ~/.vim`
+`cp -r .vim ~/.vim`
 
 You will also have to get the Vundle Plugin Manager by running
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
