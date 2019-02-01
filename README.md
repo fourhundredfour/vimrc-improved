@@ -13,7 +13,7 @@ Assuming that you use a *POSIX* compliant shell:
 You start by downloading or **cloning** this repository and move the files into your home directory.
 
 `cp .vimrc ~/.vimrc`
-then
+and then
 `cp -r .vim ~/.vim`
 
 You will also have to get the Vundle Plugin Manager by running
