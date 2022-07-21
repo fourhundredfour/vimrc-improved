@@ -19,5 +19,5 @@ and then
 You will also have to get the Vundle Plugin Manager by running
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-Then, fire up vim and run `:PluginInstall`, to let **Vundle** to the rest for you. After this completed, you just have to do one thing more: Head into `~/.vim/bundles/YouCompleteMe` and run `python3 install.py`. If you want *YouCompleteMe* to support Java, Go, C#, etc, check out the *YouCompleteInstallation Guide*.
+Then, fire up vim and run `:PluginInstall`, to let **Vundle** to the rest for you. After this completed, you just have to do one thing more: Head into `~/.vim/bundle/YouCompleteMe` and run `python3 install.py`. If you want *YouCompleteMe* to support Java, Go, C#, etc, check out the *YouCompleteInstallation Guide*.
 
