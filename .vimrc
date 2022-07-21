@@ -3,61 +3,38 @@ filetype off			" required
 
 " Set up the runtime path to include vundle
 " and initialize; required
-set rtp+=~/.vim/bundle/Vundle.vim 
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim 
+"call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'   " required
-Plugin 'dikiaap/minimalist'
-Plugin 'tpope/vim-surround'
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-codefmt'
-"Plugin 'scrooloose/nerdtree'
-Plugin 'preservim/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vhdirk/vim-cmake'
-Plugin 'bazelbuild/vim-bazel'
-Plugin 'leafo/moonscript-vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'zchee/vim-vgo'
-Plugin 'tomasr/molokai'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'itchyny/lightline.vim'
-Plugin 'rainglow/vim'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'jnurmine/zenburn'
-Plugin 'fatih/vim-go'
-Plugin 'yuttie/comfortable-motion.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'w0rp/ale'
-Plugin 'rakr/vim-one'
-Plugin 'pangloss/vim-javascript'
-Plugin 'bfrg/vim-cpp-modern'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'elzr/vim-json'
-Plugin 'othree/html5.vim'
-Plugin 'ekalinin/dockerfile.vim'
-Plugin 'nlknguyen/papercolor'
-Plugin 'daylerees/colour-schemes'
-Plugin 'effkay/argonaut.vim'
-Plugin 'ajh17/Spacegray.vim'
-Plugin 'jdsimcoe/abstract.vim'
-Plugin 'hazelnusse/flatbuffers-bazel'
-Plugin 'dcharbon/vim-flatbuffers'
-Plugin 'joshdick/onedark.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-sensible'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'ryanoasis/vim-devicons'
+Plug 'VundleVim/Vundle.vim'   " required
+Plug 'tpope/vim-surround' " Delete/change/add parentheses/quotes/XML-tags/much more with ease
+Plug 'google/vim-maktaba' " Maktaba is a vimscript plugin library. It is designed for plugin authors.
+Plug 'google/vim-codefmt' " Vim plugin for syntax-aware code formatting
+Plug 'preservim/nerdtree' " Navigation / File Explorer
+Plug 'vhdirk/vim-cmake' " Vim/Neovim plugin for working with CMake projects
+"Plug 'Valloric/YouCompleteMe'
+Plug 'easymotion/vim-easymotion' " easyMotion provides a much simpler way to use some motions in vim.
+Plug 'airblade/vim-gitgutter' " A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
+Plug 'itchyny/lightline.vim' " A light and configurable statusline/tabline plugin for Vim
+Plug 'rainglow/vim' " 320+ color themes for VIM.
+Plug 'fatih/vim-go'
+Plug 'yuttie/comfortable-motion.vim' " Brings physics-based smooth scrolling to the Vim world!
+Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
+Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
+Plug 'jdsimcoe/abstract.vim'
+Plug 'jiangmiao/auto-pairs' " Vim plugin, insert or delete brackets, parens, quotes in pair
+Plug 'tpope/vim-sensible' " sensible.vim: Defaults everyone can agree on
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'
+Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
-call vundle#end()		" required
-filetype plugin indent on	" required
-
+"call vundle#end()		" required
+"filetype plugin indent on	" required
+call plug#end()
 set nowrap
 set backspace=indent,eol,start
 set number
@@ -127,7 +104,11 @@ if has("gui_running")
   set guitablabel=%M\ %t
 endif
 
-set guifont=DroidSansMono_Nerd_Font:h11
+set guifont=DroidSansMono\ Nerd\ Font:h11
+set termguicolors
+set showcmd
+
+set updatetime=300
 
 set encoding=utf8
 
@@ -151,6 +132,11 @@ if get(g:, 'elite_mode')
 	nnoremap <Left>  :vertical resize +2<CR>
 	nnoremap <Right> :vertical resize -2<CR>
 endif
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
