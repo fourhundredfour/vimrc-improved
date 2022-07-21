@@ -11,7 +11,8 @@ Plugin 'dikiaap/minimalist'
 Plugin 'tpope/vim-surround'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vhdirk/vim-cmake'
@@ -52,6 +53,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Rip-Rip/clang_complete'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -90,7 +92,7 @@ if has("gui_macvim")
 endif
 
 set foldcolumn=1
-
+set foldmethod=indent
 let g:elite_mode=1
 
 let g:webdevicons_conceal_nerdtree_brackets = 1
@@ -112,11 +114,11 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-  colorscheme one
+  colorscheme murphy
 catch
 endtry
 
-set background=light
+set background=dark
 
 if has("gui_running")
   set guioptions-=T
@@ -124,6 +126,8 @@ if has("gui_running")
   set t_Co=256
   set guitablabel=%M\ %t
 endif
+
+set guifont=DroidSansMono_Nerd_Font:h11
 
 set encoding=utf8
 
@@ -140,7 +144,7 @@ set tw=500
 set ai
 set si
 set wrap
-
+autocmd VimEnter * NERDTree
 if get(g:, 'elite_mode')
 	nnoremap <Up>    :resize +2<CR>
 	nnoremap <Down>  :resize -2<CR>
