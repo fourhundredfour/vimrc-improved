@@ -23,3 +23,8 @@ Run `make install` to do it automatically.
 It's because you don't have a [Nerd Font](https://www.nerdfonts.com/font-downloads) installed. After installation, adjust the `.vimrc` and reload the configuration through `:source ~/.vimrc`.  
 
 If it still doesn't work, see if you can specify a font in your terminal. If so, select the Nerd Font there.
+
+### How can I add a new language(-server)?
+Install a coc extension. The instructions for the extensions as well as how to install them can be found here.
+* [https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
+* [https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions)
