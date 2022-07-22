@@ -1,13 +1,10 @@
 set nocompatible		" required
 filetype off			" required
 
-" Set up the runtime path to include vundle
+" Set up the runtime path to include vim plug
 " and initialize; required
-"set rtp+=~/.vim/bundle/Vundle.vim 
-"call vundle#begin()
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'   " required
 Plug 'tpope/vim-surround' " Delete/change/add parentheses/quotes/XML-tags/much more with ease
 Plug 'google/vim-maktaba' " Maktaba is a vimscript plugin library. It is designed for plugin authors.
 Plug 'google/vim-codefmt' " Vim plugin for syntax-aware code formatting
@@ -32,9 +29,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
-"call vundle#end()		" required
-"filetype plugin indent on	" required
 call plug#end()
+
+set encoding=utf8
+set showcmd
+set updatetime=300
 set nowrap
 set backspace=indent,eol,start
 set number
@@ -86,16 +85,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
 syntax enable
+
 if $COLORTERM == 'gnome-terminal'
   set t_CO=256
 endif
+set termguicolors
 
-try
-  colorscheme murphy
-catch
-endtry
-
+colorscheme murphy
 set background=dark
+
+set guifont=DroidSansMono\ Nerd\ Font:h11
 
 if has("gui_running")
   set guioptions-=T
@@ -104,13 +103,6 @@ if has("gui_running")
   set guitablabel=%M\ %t
 endif
 
-set guifont=DroidSansMono\ Nerd\ Font:h11
-set termguicolors
-set showcmd
-
-set updatetime=300
-
-set encoding=utf8
 
 set ffs=unix,dos,mac
 
@@ -125,13 +117,14 @@ set tw=500
 set ai
 set si
 set wrap
-autocmd VimEnter * NERDTree
+
 if get(g:, 'elite_mode')
 	nnoremap <Up>    :resize +2<CR>
 	nnoremap <Down>  :resize -2<CR>
 	nnoremap <Left>  :vertical resize +2<CR>
 	nnoremap <Right> :vertical resize -2<CR>
 endif
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -142,3 +135,5 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 map <C-f> :FormatCode<cr>
 map <C-s> :w<cr>
+
+autocmd VimEnter * NERDTree

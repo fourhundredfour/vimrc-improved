@@ -1,23 +1,25 @@
 # vimrc
 
-This is the vim configuration that I use for C++, Go, Java, Lua/Moonscript and Python development.
-While the total amount of plugins is not to big, the existing ones really manage to turn Vim into a Beast. And still, if the features are overwealming,
-just run `:Goyo` and you are in the lightweight mode.
-
-My favorite part of this config is `ale`, which is an async linter that checks your code on the fly (It is fast). There's also stuff like Googes `codefmt` and `gitgutter`, which really help increasing my development speed.
-
-## Installing
-
+## Installing  
 The installment is not hard at all.
 Assuming that you use a *POSIX* compliant shell:
-You start by downloading or **cloning** this repository and move the files into your home directory.
+You start by downloading or **cloning** this repository and move the file into your home directory.
 
 `cp .vimrc ~/.vimrc`
-and then
-`cp -r .vim ~/.vim`
 
-You will also have to get the Vundle Plugin Manager by running
-`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+After the installation, you need to install `vim-plug` by running the following command.  
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`  
 
-Then, fire up vim and run `:PluginInstall`, to let **Vundle** to the rest for you. After this completed, you just have to do one thing more: Head into `~/.vim/bundle/YouCompleteMe` and run `python3 install.py`. If you want *YouCompleteMe* to support Java, Go, C#, etc, check out the *YouCompleteInstallation Guide*.
+Then open vim and install the plugins with `:PlugInstall`.  
+Please be sure that you have `NodeJS` and `Yarn` installed.
 
+## Easy Installation
+Run `make install` to do it automatically.
+
+
+## FAQ
+
+### NERDTree/File Explorer does not show the icons
+It's because you don't have a [Nerd Font](https://www.nerdfonts.com/font-downloads) installed. After installation, adjust the `.vimrc` and reload the configuration through `:source ~/.vimrc`.  
+
+If it still doesn't work, see if you can specify a font in your terminal. If so, select the Nerd Font there.
