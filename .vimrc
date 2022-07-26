@@ -28,6 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -49,7 +50,6 @@ set ruler
 set cmdheight=2
 set hid
 set whichwrap+=<,>,h,l
-
 set ignorecase
 set smartcase
 set hlsearch
@@ -76,6 +76,7 @@ let g:WebDevIconsNerdTreeAterGlyphPadding = ' '
 
 set cursorline
 
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -135,5 +136,8 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 map <C-f> :FormatCode<cr>
 map <C-s> :w<cr>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 autocmd VimEnter * NERDTree
